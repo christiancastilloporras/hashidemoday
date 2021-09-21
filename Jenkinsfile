@@ -11,7 +11,7 @@ pipeline {
             
     
            steps {
-              
+             cleanWs() 
              checkout scm
            
              }
@@ -54,7 +54,7 @@ pipeline {
             steps {
                 script {      
               try {
-         
+                     sh 'terraform init'
                      sh 'terraform plan -out=plan'
                      sh 'terraform show -json plan > plan.json'
                      sh './shiftleft iac-assessment -e bce8a7d2-d51a-4fce-ba93-362099ce3911 -p plan.json -r -64'
