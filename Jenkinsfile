@@ -3,6 +3,8 @@ pipeline {
       environment {
            CHKP_CLOUDGUARD_ID = credentials("CHKP_CLOUDGUARD_ID")
            CHKP_CLOUDGUARD_SECRET = credentials("CHKP_CLOUDGUARD_SECRET")
+           AWS_ACCESS_KEY_ID = credentials("AWS_ID")
+           AWS_SECRET_ACCESS_KEY = credentials("AWS_SECRET")
         }
         
   stages {
