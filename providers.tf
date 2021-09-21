@@ -1,11 +1,14 @@
-
-provider "aws" {
-  profile = var.profile
-  region  = var.region
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "3.59.0"
+    }
+  }
 }
 
 provider "aws" {
-  alias      = "plain_text_access_keys_provider"
+  # Configuration options
   region     = "us-west-1"
   access_key = "AKIAIOSFODNN7EXAMPLE"
   secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
